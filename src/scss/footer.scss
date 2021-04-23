@@ -1,0 +1,41 @@
+/* footer__frame */
+.footer__frame {
+  height: 125px;
+  background: $purple;
+  display: grid;
+
+  @include breakpoint(large) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-copyright {
+    padding: 30px 0 0 20px;
+    font-size: 16px;
+    line-height: 19px;
+    color: $white;
+    opacity: 0.4;
+
+    @include breakpoint(large) {
+      padding: 53px 0 52px 40px;
+    }
+
+  }
+
+  &-socials {
+    padding: 16px 0 0 20px;
+
+    @include breakpoint(large) {
+      padding: 48px 43px 48px 0;
+    }
+
+    a {
+      font-size: 26px;
+      color: $white;
+
+      & + a {
+        margin-left: 20px;
+      }
+    }
+  }
+}

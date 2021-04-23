@@ -1,0 +1,174 @@
+
+@import "fonts";
+@import "variables";
+@import "mixins";
+@import "normalize";
+@import "generic";
+@import "header";
+@import "footer";
+@import "mobile_menu";
+
+
+/* Frames for AboutUs.html */
+/* about__frame */
+.about__frame {
+
+  &-img {
+    display: flex;
+    justify-content: center;
+    margin: 0 54px 40px 54px;
+
+    img {
+      height: 202px;
+      width: 267px;
+
+      @include breakpoint(large) {
+        height: 300px;
+        width: 397px;
+      }
+    }
+  }
+
+  &-text {
+    max-width: 90%;
+    margin: 0 auto;
+    @include TextL($lightblack);
+  }
+}
+
+/* contact__frame */
+.contact__frame {
+
+  &-contacts {
+    display: block;
+
+    &-first {
+      &.is-text {padding-top: 20px; @include TextS($grey); }
+      &.is-data {@include TextM($black);}
+    }
+
+    &-second {
+      &.is-text {padding-top: 20px; @include TextS($grey);}
+      &.is-data {@include TextM($black);}
+    }
+
+    @include breakpoint(large) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &-first {
+        &.is-text {@include TextS($grey); border: none;}
+        &.is-data {@include TextM($black); border: none;}
+        padding-right: 70px;
+        border-right: solid #C8C8CF 1px;
+      }
+
+      &-second {
+        &.is-text {@include TextS($grey);}
+        &.is-data {@include TextM($black);}
+        padding-left: 70px;
+      }
+    }
+
+}
+}
+
+/* teams__frame */
+.teams__frame {
+
+  &-team {
+    margin-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+    div{
+      margin-top: 30px;
+      padding: 0 60px;
+
+      @include breakpoint(large) {
+        margin-top: 55px;
+      }
+    }
+  }
+}
+
+
+/* Frames for FAQ.html */
+/* faq__frame */
+.faq__frame {
+
+  &-img {
+    display: flex;
+    justify-content: center;
+    margin: 0 54px 40px 54px;
+
+    img {
+      height: 202px;
+      width: 242px;
+
+      @include breakpoint(large) {
+        height: 300px;
+        width: 360px;
+      }
+    }
+  }
+
+  &-text {
+    max-width: 90%;
+    margin: 0 auto;
+    @include TextL($lightblack);
+  }
+}
+
+/* questions__frame */
+.questions__frame {
+  display: block;
+  justify-content: center;
+
+  &.collapsible {
+    background-color: $lightgrey;
+    border-radius: 6px;
+    color: $lightblack;
+    cursor: pointer;
+    padding: 19px 20px 18px 22px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    @include TextM($lightblack);
+
+    &:hover {
+      background-color: $collaphover;
+    }
+
+    &:after {
+      font-family: 'icons';
+      content: '\0047';
+      color: #A0A7AD;
+      float: right;
+      margin-right: 5px;
+    }
+  }
+
+  .active {
+    background-color: $collapopen;
+    color: $collaptext;
+    &:after {
+      font-family: 'icons';
+      content: '\0046';
+      margin-right: 5px;
+      color: #A0A7AD;
+    }
+  }
+
+  &.content {
+    padding-left: 22px;
+    text-align: left;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    @include TextM($lightblack);
+  }
+}

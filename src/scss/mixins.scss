@@ -1,0 +1,55 @@
+/* mixin */
+
+@mixin breakpoint($point) {
+  @if $point == large {
+    @media screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+  @else if $point == medium {
+    @media screen and (max-width: 1199px) {
+      @content;
+    }
+  }
+  @else if $point == small {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  }
+}
+
+@mixin TextL($color) {
+  font-size: 16px;
+  color: $color;
+
+  @include breakpoint(medium) {
+    font-size: 20px;
+  }
+  @include breakpoint(large) {
+    font-size: 24px;
+  }
+}
+
+@mixin TextM($color) {
+  font-size: 14px;
+  color: $color;
+
+  @include breakpoint(medium) {
+    font-size: 16px;
+  }
+  @include breakpoint(large) {
+    font-size: 20px;
+  }
+}
+
+@mixin TextS($color) {
+  font-size: 12px;
+  color: $color;
+
+  @include breakpoint(medium) {
+    font-size: 14px;
+  }
+  @include breakpoint(large) {
+    font-size: 14px;
+  }
+}

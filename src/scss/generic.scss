@@ -1,0 +1,52 @@
+/* generic */
+.is-animated {
+  transition: all 400ms ease;
+}
+
+.content__container {
+  margin: 0 auto;
+
+  &.is-align-center {
+    text-align: center;
+  }
+
+  @include breakpoint(large) {
+    width: 980px;
+  }
+
+  @include breakpoint(medium) {
+    width: 100%;
+  }
+}
+
+section {
+
+  &.is-grey {
+    background: $lightgrey;
+  }
+  padding: 40px 20px;
+
+  @include breakpoint(large) {
+    padding: 80px 20px;
+  }
+}
+
+.is-name {
+  @include TextM($black);
+}
+
+.is-spec {
+  @include TextS($teamgrey);
+}
+
+.is-desktop {
+  @include breakpoint(medium) {
+    display: none!important;
+  }
+}
+
+.is-mobile {
+  @include breakpoint(large) {
+    display: none!important;
+  }
+}
